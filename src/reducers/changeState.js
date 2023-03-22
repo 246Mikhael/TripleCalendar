@@ -1,4 +1,7 @@
 
+import { createSlice } from "@reduxjs/toolkit";
+
+/*
 const initialState={visible: 0}
 
 const changeState = (state = initialState, action)=>{
@@ -10,10 +13,16 @@ const changeState = (state = initialState, action)=>{
     default: return state;   
    }
 };
-  
-
-   
+ */
 
 
+const changeState = createSlice({
+   name:'counter',
+   initialState: 0,
+   reducers: {
+   increment: state=> state + 1,
+   decrement: state=> state - 1
+   }
+})
 
-export default changeState;
+export default changeState;   

@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducers from "./reducers/reducers";
+import changeState from "./reducers/changeState";
 
 
 export const store = configureStore({
-    reducer: reducers
+    reducer: changeState.reducer
 })
