@@ -1,20 +1,12 @@
 import React from "react";
 import Table from "./Table";
 
-const styles = {
-     display: 'inline-block',
-     paddingRight: '40px'
-    }
-
-function Month({createArrForMonth, num}){
-
+function Month({createArrForMonth, num, currentDate}){
+  
     let months = ['январь', 'февраль', 'март','апрель', 'май', 'июнь', 'июль', 'август',
 'сентябрь','октябрь', 'ноябрь','декабрь'];
 
  let numberOfMonth = createArrForMonth(num).month;
- 
- console.log(numberOfMonth);
- console.log(normalizeMonthNumber(numberOfMonth));
  
  function normalizeMonthNumber(n){
   let divis = Math.floor(n / 12);
@@ -32,20 +24,23 @@ function Month({createArrForMonth, num}){
  }
 
      let month= months[normalizeMonthNumber(numberOfMonth)];
-
+    console.log(normalizeMonthNumber(numberOfMonth))
   
      
      let year = createArrForMonth(num).year1;
 
 
-    return <div  style={styles}>
-             <div>
-                <p  style={styles}>{month}</p>
-                <p  style={styles}>{year}</p>
+    return <div className="block">
+             <div className="info">
+                <span>{month}  </span>
+                <span>{year}</span>
              </div>
-             <div style={styles}>
-               <Table createArrForMonth={createArrForMonth} num={num}/>
-             </div>
+               <Table 
+               createArrForMonth={createArrForMonth}
+                num={num} 
+                year={year}
+                month={normalizeMonthNumber(numberOfMonth)}
+                currentDate={currentDate}/>
            </div>
 }
 

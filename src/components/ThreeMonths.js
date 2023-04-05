@@ -1,11 +1,13 @@
 import React from "react";
 import Month from "./Month";
+import Hrefs from "./Hrefs";
 
+function ThreeMonths({value,increase,decrease,current}){
 
-
-
-
-function ThreeMonths({value,increase,decrease}){
+  function getCurrentDate(){
+    let date = new Date();
+    return date.getFullYear() + " " + date.getMonth() + " " + date.getDate();
+  }
 
   function createArrForMonth(n){
     let date = new Date();
@@ -14,7 +16,7 @@ function ThreeMonths({value,increase,decrease}){
 
     let date1 = new Date(year,month+1,0);
     let lastDayOfMonth = date1.getDate();
-  
+    let today = year + ' ' + month + " " + date.getDate();
 
     let date2 = new Date(year,month,1);
     let firstDayOfWeekInMonth = date2.getDay();
@@ -23,7 +25,7 @@ function ThreeMonths({value,increase,decrease}){
     let days =chunk(addEmptyDaysAfter(addEmptyDaysBefore(createArr(lastDayOfMonth),
     firstDayOfWeekInMonth)));
 
-    return {days,year1,month};   
+    return {days,year1,month,today};   
 }
 
 function createArr(lastDay){
@@ -69,19 +71,23 @@ function chunk(arr){
   return result;
 }
     return <div>
-              <div>
-                <Month createArrForMonth={createArrForMonth} num={value - 1}/>
-                <Month createArrForMonth={createArrForMonth} num={value}/>
-                <Month createArrForMonth={createArrForMonth} num={value + 1}/>
+              <Hrefs increase ={increase}
+                          decrease ={decrease}
+                          current={current}/>
+               <div>  
+                <Month
+                  createArrForMonth={createArrForMonth}
+                  num={value - 1}
+                  currentDate = {getCurrentDate()}/>
+                <Month
+                  createArrForMonth={createArrForMonth} 
+                  num={value}
+                  currentDate = {getCurrentDate()} />
+                <Month 
+                  createArrForMonth={createArrForMonth} 
+                  num={value + 1}
+                  currentDate = {getCurrentDate()}/>
                </div>
-               <div >    
-                 <a href="/" onClick={(event)=> {
-                             decrease();
-                              event.preventDefault()}}>назад</a>
-                 <a href="/" onClick={(event)=> {
-                             increase();
-                             event.preventDefault()}}>вперед</a>
-              </div>
     </div>
 }
 

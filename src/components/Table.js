@@ -1,13 +1,32 @@
 import React from "react";
 
-function Table({createArrForMonth, num}){
+function Table({createArrForMonth, num, year, month, currentDate}){
+
+ const style = {
+    background: 'rgb(219, 253, 241)'
+ }   
 
 let arr = createArrForMonth(num).days;
-
 const rows = arr.map(function(subArr, index){
+   
     return <tr key={index}>
          {subArr.map(function(item,index){
-           return <td key={index}>{item}</td>
+
+            let id = year +' ' + month +' ' + item;
+            if(id === currentDate){
+                return <td 
+                key={index} 
+                style={style}>
+                {item}
+                </td>
+            } else {
+                return <td
+                className={'day'+index} 
+                key={index}>
+                {item}
+                </td>
+            }
+           
         })}
             </tr>
 })
@@ -16,13 +35,13 @@ const rows = arr.map(function(subArr, index){
     return <table>
     <thead>
        <tr>
-        <td>пн</td>
-        <td>вт</td>
-        <td>ср</td>
-        <td>чт</td>
-        <td>пт</td>
-        <td>сб</td>
-        <td>вс</td>
+        <td className="day">пн</td>
+        <td className="day">вт</td>
+        <td className="day">ср</td>
+        <td className="day">чт</td>
+        <td className="day">пт</td>
+        <td className="day">сб</td>
+        <td className="day">вс</td>
         </tr>
     </thead>
     <tbody>
