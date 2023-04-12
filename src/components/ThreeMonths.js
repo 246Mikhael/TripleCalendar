@@ -74,7 +74,7 @@ function chunk(arr){
               <Hrefs increase ={increase}
                           decrease ={decrease}
                           current={current}/>
-               <div>  
+               <div id="months">  
                 <Month
                   createArrForMonth={createArrForMonth}
                   num={value - 1}

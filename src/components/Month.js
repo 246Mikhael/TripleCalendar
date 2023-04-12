@@ -24,11 +24,8 @@ function Month({createArrForMonth, num, currentDate}){
  }
 
      let month= months[normalizeMonthNumber(numberOfMonth)];
-    console.log(normalizeMonthNumber(numberOfMonth))
-  
      
      let year = createArrForMonth(num).year1;
-
 
     return <div className="block">
              <div className="info">
@@ -36,13 +33,11 @@ function Month({createArrForMonth, num, currentDate}){
                 <span>{year}</span>
              </div>
                <Table 
-               createArrForMonth={createArrForMonth}
+                createArrForMonth={createArrForMonth}
                 num={num} 
                 year={year}
                 month={normalizeMonthNumber(numberOfMonth)}
                 currentDate={currentDate}/>
            </div>
 }
-
-
 export default Month;

@@ -1,6 +1,7 @@
 .main {
     background-color: rgb(219, 253, 241);
 }
+
 a {
     padding-right: 20px;
     text-decoration: none;
@@ -12,7 +13,7 @@ a {
 }
 .hrefs {
     border: 1px solid black;
-    width: 1070px;
+    width: 1053px;
     margin-left: 50px;
     margin-bottom: 20px;
     background-color: #D2691E;
@@ -23,7 +24,8 @@ a {
 .href {
     height: 50px;
     display: inline-block;
-    margin-left: 50px;
+    margin-left: 140px;
+    margin-right: 90px;
     margin-top: 20px;
 }
 
@@ -50,7 +52,7 @@ td {
 
 .info {
     border: 1px solid black;
-    width: 320px;
+    width: 315px;
     height: 40px;
     background-color: #F0E68C;
     border-radius: 35px 10px 5px 5px;
@@ -66,4 +68,30 @@ td {
     display: 'inline-block';
     padding-left: 50px;
     float: left;
+    margin-bottom: 20px;
+}
+
+@media ( min-width: 425px) and (max-width: 1120px){
+    .hrefs {
+        width: 684px
+    }
+    .href {
+        margin-left: 60px;
+        margin-right: 50px;   
+    }
+}
+
+@media  (max-width: 770px){
+    .info {
+        border-radius: 10px 10px 5px 5px;
+    }
+    .hrefs {
+        width: 316px;
+        border-radius: 30px 20px 10px 10px;
+    }
+    .href {
+        height: 20px;
+        display: inline;
+        width: 15px;
+    }  
 }
