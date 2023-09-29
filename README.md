@@ -5,7 +5,8 @@
 
 ### Используемые технологии и библиотеки:
 
-1. React
-2. React-Redux
-3. Redux toolkit
-4. Bootstrap
+1. Node JS
+2. React
+3. React-Redux
+4. Redux toolkit
+5. Bootstrap
