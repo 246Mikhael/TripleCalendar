@@ -16,7 +16,7 @@ function ThreeMonths({value,
 
   function setCoords() {
     const style = {
-      top: `${y}px`,
+      top: `${y + 20}px`,
       left: `${x - 110}px`
     }
     return style;

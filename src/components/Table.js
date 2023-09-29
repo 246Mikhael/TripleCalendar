@@ -67,7 +67,7 @@ function Table({createArrForMonth,
                        </td>
             } else if (date === currentDate && isHolliday) {
                 return <td 
-                           onMouseOver = {(event) => { getTooltipText(event, hollidays)}}
+                           onMouseMove = {(event) => { getTooltipText(event, hollidays)}}
                            onMouseLeave = {(event) => delTooltipText(event)}
                            id = {monthAndDay}
                            key = {index} 
@@ -83,7 +83,7 @@ function Table({createArrForMonth,
                            </td>
                 }else if ((index === 5 || index === 6) && isHolliday) {
                     return <td 
-                               onMouseOver = {(event) => {getTooltipText(event, hollidays)}}
+                               onMouseMove = {(event) => {getTooltipText(event, hollidays)}}
                                onMouseLeave = {(event) => delTooltipText(event)}
                                id = {monthAndDay}
                                key = {index}
@@ -92,7 +92,7 @@ function Table({createArrForMonth,
                             </td>
                 } else if ((index !== 5 || index !== 6) && isHolliday) {
                     return <td
-                             onMouseOver = {(event) =>  {getTooltipText(event, hollidays)}}
+                             onMouseMove = {(event) =>  {getTooltipText(event, hollidays)}}
                              onMouseLeave = {(event) => delTooltipText(event)}
                              id = {monthAndDay}
                              key = {index}
