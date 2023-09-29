@@ -1,5 +1,6 @@
 import './App.css';
 import ShowThreeMonths from './cotainers.js/showThreeMonths';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 function App() {
