@@ -114,7 +114,7 @@ function Table({createArrForMonth,
 
     return <div>
         <table className="w-100 mb-4">
-          <thead className="fs-5 text-uppercase text-center">
+          <thead className="fs-6 text-uppercase text-center">
              <tr>
                 <td>mon</td>
                 <td>tue</td>
