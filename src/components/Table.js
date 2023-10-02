@@ -37,8 +37,8 @@ function Table({createArrForMonth,
     
     function getTooltipText( event, obj ) {
         setTooltipValue( obj[event.target.id] );
-        setX( event.clientX );
-        setY( event.clientY );
+        setX( event.pageX );
+        setY( event.pageY );
     }
 
       
@@ -116,13 +116,13 @@ function Table({createArrForMonth,
         <table className="w-100 mb-4">
           <thead className="fs-6 text-uppercase text-center">
              <tr>
-                <td>mon</td>
-                <td>tue</td>
-                <td>wed</td>
-                <td>thu</td>
-                <td>fri</td>
-                <td className = "weekend">sat</td>
-                <td className = "weekend">sun</td>
+                <td className="month">mon</td>
+                <td className="month">tue</td>
+                <td className="month">wed</td>
+                <td className="month">thu</td>
+                <td className="month">fri</td>
+                <td className = "weekend month">sat</td>
+                <td className = "weekend month">sun</td>
              </tr>
           </thead>
           <tbody className = "fs-4 text-center">
