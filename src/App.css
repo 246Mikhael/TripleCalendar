@@ -15,6 +15,10 @@ a, table {
     font-family: 'Montserrat', 'Arial', 'sans-serif';
 }
 
+.hrefs-row {
+    border:5px solid var(--color2);
+}
+
 a:hover {
     color: var(--color1) !important;
 }

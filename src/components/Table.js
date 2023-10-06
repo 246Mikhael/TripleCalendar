@@ -9,34 +9,37 @@ function Table({createArrForMonth,
                 setX, 
                 setY}){
 
-    let hollidays = {
-        '0_1':  "New Year",
-        '1_23': "Defender of The Fatherland Day",
-        '2_8': "International Women's Day",
-        '4_1': "International Worker's Day",
-        '4_9': "Victory Day",
-        '5_12': "Russia Day",
-        '10_4': "National Unity Day",
-        '11_31': "New Year"
-    }
-  
+    
  
     function getHollidays (mon , day) {
-        if (mon + '_' + day === '0_1' || 
-            mon + '_' + day === '1_23' ||
-            mon + '_' + day === '2_8' ||
-            mon + '_' + day === '4_1' ||
-            mon + '_' + day === '4_9' || 
-            mon + '_' + day === '5_12' ||
-            mon + '_' + day === '10_4' ||
-            mon + '_' + day === '11_31') {
-         return true;
+        let hollidays = {
+            '0_1':  "New Year",
+            '1_23': "Defender of The Fatherland Day",
+            '2_8': "International Women's Day",
+            '4_1': "International Worker's Day",
+            '4_9': "Victory Day",
+            '5_12': "Russia Day",
+            '10_4': "National Unity Day",
+            '11_31': "New Year"
+        }
+      
+         let date = mon + '_' + day;
+
+        if (date === '0_1' || 
+            date === '1_23' ||
+            date === '2_8' ||
+            date === '4_1' ||
+            date === '4_9' || 
+            date === '5_12' ||
+            date === '10_4' ||
+            date === '11_31') {
+         return hollidays[date];
         }
     }
 
     
-    function getTooltipText( event, obj ) {
-        setTooltipValue( obj[event.target.id] );
+    function getTooltipText( event, date ) {
+        setTooltipValue(date);
         setX( event.pageX );
         setY( event.pageY );
     }
@@ -67,7 +70,7 @@ function Table({createArrForMonth,
                        </td>
             } else if (date === currentDate && isHolliday) {
                 return <td 
-                           onMouseMove = {(event) => { getTooltipText(event, hollidays)}}
+                           onMouseMove = {(event) => { getTooltipText(event, isHolliday)}}
                            onMouseLeave = {(event) => delTooltipText(event)}
                            id = {monthAndDay}
                            key = {index} 
@@ -83,7 +86,7 @@ function Table({createArrForMonth,
                            </td>
                 }else if ((index === 5 || index === 6) && isHolliday) {
                     return <td 
-                               onMouseMove = {(event) => {getTooltipText(event, hollidays)}}
+                               onMouseMove = {(event) => {getTooltipText(event, isHolliday)}}
                                onMouseLeave = {(event) => delTooltipText(event)}
                                id = {monthAndDay}
                                key = {index}
@@ -92,7 +95,7 @@ function Table({createArrForMonth,
                             </td>
                 } else if ((index !== 5 || index !== 6) && isHolliday) {
                     return <td
-                             onMouseMove = {(event) =>  {getTooltipText(event, hollidays)}}
+                             onMouseMove = {(event) =>  {getTooltipText(event, isHolliday)}}
                              onMouseLeave = {(event) => delTooltipText(event)}
                              id = {monthAndDay}
                              key = {index}
