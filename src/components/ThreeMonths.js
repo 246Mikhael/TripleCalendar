@@ -121,7 +121,7 @@ function ThreeMonths({value,
 
                 <div className = "container">  
                   <div className = "row gx-5">
-                  <div className = "col-xl-4 col-sm-12" >
+                  <div className = "col-xl-4 col-md-4 col-sm-12" >
                       <Month 
                         createArrForMonth = {createArrForMonth}
                         num = {value - 1}
@@ -130,7 +130,7 @@ function ThreeMonths({value,
                         setX = {setX}
                         setY = {setY}/>
                     </div>
-                    <div className = "col-xl-4 col-sm-12">
+                    <div className = "col-xl-4 col-md-4 col-sm-12">
                       <Month
                         createArrForMonth = {createArrForMonth}
                         num = {value}
@@ -139,7 +139,7 @@ function ThreeMonths({value,
                         setX = {setX}
                         setY = {setY}/>
                     </div>
-                    <div className="col-xl-4 col-sm-12">
+                    <div className="col-xl-4 col-md-4 col-sm-12">
                       <Month
                         createArrForMonth = {createArrForMonth}
                         num = {value + 1}
